@@ -38,7 +38,8 @@ INSTALLED_APPS = [
 ]
 
 CUSTOM_APP = [
-    'app1'
+    'app1',
+    'client_app'
 ]
 
 INSTALLED_APPS += CUSTOM_APP
@@ -128,3 +129,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'home_static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kpi.study1@gmail.com'
+EMAIL_HOST_PASSWORD = 'kpistudy1'
+EMAIL_PORT = 587
+
+LOGIN_URL = 'client:login'

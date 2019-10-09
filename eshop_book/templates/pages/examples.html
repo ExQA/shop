@@ -32,5 +32,9 @@
             <li>{{ number }}</li>
         {% endfor %}
     </ol>
+
+
+    <a href="{% url 'client:demo-model-form' %}">Model form</a>
+    <a href="{% url 'client:privatbank-api' %}">Get privatbank api</a>
     {#    {{ some_list }}#}
 {% endblock %}

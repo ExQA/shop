@@ -23,11 +23,9 @@ handler_404 = '404.html'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app1.urls'))
-
+    path('', include('app1.urls')),
+    path('client/', include('client_app.urls', namespace='client'))
 ]
-
-
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_ROOT, document_root=settings.STATIC_URL)

@@ -21,7 +21,11 @@ def index(request):
 
 from .calc import calc_obj
 
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
+
+# @login_required(redirect_field_name=settings.LOGIN_URL)
 def calc(request):
     ctx = {}
     ctx['operations'] = calc_obj.keys()
@@ -68,7 +72,7 @@ def book_info(request, id):
         return render(request, 'pages/book_info.html', ctx)
     except Exception as e:
         print(e)
-        return redirect('/')
+        return redirect('client:login')
 
 
 def all_books_for_author(request, id_author):
